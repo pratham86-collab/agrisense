@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1f7a4d);
+}
+
+/* CARD */
+.signup-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url(../images/login.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+.signup-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px 40px;
+    border-radius: 16px;
+    width: 320px;
+    color: white;
+    text-align: center;
+    margin: 30px;
+    animation: fadeIn 0.6s ease;
+}
+.signup-card p{
+   font-size: 24px;
+   margin-top: 0;
+}
+
+/* INPUT */
+.input-box {
+    position: relative;
+    margin: 18px 0;
+    margin-top: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #555;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* FLOAT LABEL */
+.input-box input:focus+label,
+.input-box input:valid+label {
+    top: -18px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* TOGGLE */
+.toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2E7D32;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* ERROR */
+.error {
+    color: #ff4d4d;
+    font-size: 14px !important;
+    min-height: 20px;
+    margin-top: 10px !important;
+}
+
+/* LINK */
+.login-text {
+    margin-top: 15px;
+    margin-top: 5px !important;
+    font-size: 14px !important;
+}
+
+.login-text a {
+    color: #22c55e;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SHAKE */
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

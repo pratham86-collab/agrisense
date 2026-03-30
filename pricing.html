@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSense</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="/"><img src="assets/images/logo.png" alt=""></a>
+        </div>
+        <nav>
+            <a href="/#features">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="/#dashboard">Dashboard</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-btns">
+            <a href="login.html" class="login">Login</a>
+            <a href="javascript:void(0)" class="demo" onclick="openModal()">Get Demo</a>
+        </div>
+    </header>
+
+
+    <section class="banner">
+        <h1>Flexible Pricing for Every Farm</h1>
+        <p>Choose the perfect plan for your agricultural needs</p>
+    </section>
+
+    <!-- TOGGLE -->
+    <div class="toggle">
+        <span>Monthly</span>
+        <label class="switch">
+            <input type="checkbox" id="pricingToggle">
+            <span class="slider"></span>
+        </label>
+        <span>Yearly</span>
+    </div>
+
+    <!-- PRICING -->
+    <section class="pricing">
+
+        <div class="card">
+            <h3>Basic</h3>
+            <h2 class="price" data-month="19.99" data-year="199">€19<span>/mo</span></h2>
+
+            <ul>
+                <li>✔ 1 Field Monitoring</li>
+                <li>✔ Soil Data</li>
+                <li>✔ Basic Alerts</li>
+            </ul>
+
+            <a href="contact.html" style="margin-top: 20px; display: inline-block;">Get Started</a>
+        </div>
+
+        <div class="card popular">
+            <div class="badge">Most Popular</div>
+            <h3>Standard</h3>
+            <h2 class="price" data-month="49.99" data-year="499">€49.99<span>/mo</span></h2>
+
+            <ul>
+                <li>✔ Up to 5 Fields</li>
+                <li>✔ Smart Alerts</li>
+                <li>✔ Irrigation Suggestions</li>
+                <li>✔ Weather Data</li>
+            </ul>
+
+            <a href="contact.html">Get Started</a>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <h2 class="price" data-month="99.99" data-year="999">€99.99<span>/mo</span></h2>
+
+            <ul>
+                <li>✔ Unlimited Fields</li>
+                <li>✔ AI Predictions</li>
+                <li>✔ Advanced Analytics</li>
+                <li>✔ Priority Support</li>
+            </ul>
+
+            <a href="contact.html">Get Started</a>
+        </div>
+
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Logo + About -->
+            <div class="footer-col">
+                <h3 class="footer-logo">AgriSense</h3>
+                <p>
+                    Smart farm monitoring platform that helps farmers optimize irrigation,
+                    monitor soil health, and increase crop productivity.
+                </p>
+            </div>
+
+            <!-- Product -->
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#dashboard">Dashboard</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <!-- <li><a href="comming-soon.html">Careers</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/">Documentation</a></li>
+                    <!-- <li><a href="comming-soon.html">Blog</a></li> -->
+                    <li><a href="contact.html">Support</a></li>
+                </ul>
+            </div>
+            <!-- Social -->
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="contact.html"><i class="fab fa-linkedin"></i></a>
+                    <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                    <a href="contact.html"><i class="fab fa-facebook"></i></a>
+                    <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 AgriSense. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <div class="modal" id="demoModal">
+
+        <div class="modal-content" id="modalBox">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <h2>Request a Demo</h2>
+            <p>See how AgriSense can transform your farm.</p>
+
+            <form id="demoForm">
+
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="text" id="farm" maxlength="10" placeholder="Farm Size" required>
+
+                <p class="error" id="formError"></p>
+
+                <button type="submit">Submit Request</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+        const toggle = document.getElementById("pricingToggle");
+        const prices = document.querySelectorAll(".price");
+
+        toggle.addEventListener("change", () => {
+            prices.forEach(price => {
+                const monthly = price.getAttribute("data-month");
+                const yearly = price.getAttribute("data-year");
+
+                if (toggle.checked) {
+                    price.innerHTML = `€${yearly}<span>/yr</span>`;
+                } else {
+                    price.innerHTML = `€${monthly}<span>/mo</span>`;
+                }
+            });
+        });
+
+        const modal = document.getElementById("demoModal");
+        const form = document.getElementById("demoForm");
+        const error = document.getElementById("formError");
+        const box = document.getElementById("modalBox");
+
+        function openModal() {
+            document.getElementById("demoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("demoModal").style.display = "none";
+        }
+
+        /* close outside */
+        window.onclick = function (e) {
+            const modal = document.getElementById("demoModal");
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        /* FORM VALIDATION */
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            if (name === "" || email === "") {
+                error.innerText = "Please fill all required fields";
+
+                box.classList.add("shake");
+                setTimeout(() => box.classList.remove("shake"), 300);
+            } else {
+                error.classList.add("success");
+                error.innerText = "✅ Request submitted successfully!";
+
+                form.reset();
+            }
+        });
+        document.getElementById("farm").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    </script>
+</body>
+
+</html>

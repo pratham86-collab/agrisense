@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSense</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="/"><img src="assets/images/logo.png" alt=""></a>
+        </div>
+        <nav>
+            <a href="index.html#features">Features</a>
+            <a href="comming-soon.html">Technology</a>
+            <a href="index.html#dashboard">Dashboard</a>
+            <a href="comming-soon.html">Pricing</a>
+            <a href="comming-soon.html">Contact</a>
+        </nav>
+        <div class="nav-btns">
+            <a href="javascript:void(0)" class="login">Login</a>
+            <a href="javascript:void(0)" class="demo">Get Demo</a>
+        </div>
+    </header>
+
+    <!-- comming soon section -->
+    <section class="coming-soon">
+
+        <div class="overlay"></div>
+
+        <div class="content">
+
+            <h1>Smart Farming Starts Here</h1>
+
+            <h2>🚀 Coming Soon</h2>
+
+            <p>
+                We are building a smart farm monitoring platform to help farmers
+                optimize irrigation and improve crop yield using real-time data.
+            </p>
+
+            <div class="countdown">
+                <div><span id="days">00</span>
+                    <p>Days</p>
+                </div>
+                <div><span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+                <div><span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+                <div><span id="seconds">00</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+
+            <form class="subscribe">
+                <input type="email" placeholder="Enter your email" required>
+                <button>Notify Me</button>
+            </form>
+
+        </div>
+
+    </section>
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Logo + About -->
+            <div class="footer-col">
+                <h3 class="footer-logo">AgriSense</h3>
+                <p>
+                    Smart farm monitoring platform that helps farmers optimize irrigation,
+                    monitor soil health, and increase crop productivity.
+                </p>
+            </div>
+
+            <!-- Product -->
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="comming-soon.html">Sensors</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="comming-soon.html">About</a></li>
+                    <li><a href="comming-soon.html">Careers</a></li>
+                    <li><a href="comming-soon.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="comming-soon.html">Documentation</a></li>
+                    <li><a href="comming-soon.html">Blog</a></li>
+                    <li><a href="comming-soon.html">Support</a></li>
+                </ul>
+            </div>
+            <!-- Social -->
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 AgriSense. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <script>
+        const launchDate = new Date("2026-04-01T00:00:00").getTime();
+
+        const timer = setInterval(() => {
+
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>

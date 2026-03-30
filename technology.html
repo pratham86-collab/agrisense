@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSense</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="/"><img src="assets/images/logo.png" alt=""></a>
+        </div>
+        <nav>
+            <a href="/#features">Features</a>
+            <a href="technology.html">Technology</a>
+            <a href="/#dashboard">Dashboard</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-btns">
+            <a href="login.html" class="login">Login</a>
+            <a href="javascript:void(0)" class="demo" onclick="openModal()">Get Demo</a>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <!-- Hero -->
+    <section class="banner">
+        <h1>Advanced Technology Behind AgriSense</h1>
+        <p>IoT + Cloud + AI powering smart agriculture</p>
+    </section>
+
+    <!-- GLASS CARDS -->
+    <section class="tech">
+        <h2>Our Technology stack</h2>
+        <div class="gird">
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>IoT Sensors</h3>
+                <p>ESP32 devices collect real-time soil and weather data.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Processing</h3>
+                <p>MQTT & IoT Core handle scalable real-time data streams.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>AI Analytics</h3>
+                <p>Smart irrigation and predictive crop analysis.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Dashboard</h3>
+                <p>React-based UI for monitoring and decision making.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE FLOW -->
+    <section class="architecture">
+
+        <h2>System Architecture</h2>
+
+        <div class="flow">
+
+            <div class="node">Sensors</div>
+            <div class="arrow"></div>
+
+            <div class="node">Gateway</div>
+            <div class="arrow"></div>
+
+            <div class="node">Cloud</div>
+            <div class="arrow"></div>
+
+            <div class="node">Dashboard</div>
+
+        </div>
+
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Logo + About -->
+            <div class="footer-col">
+                <h3 class="footer-logo">AgriSense</h3>
+                <p>
+                    Smart farm monitoring platform that helps farmers optimize irrigation,
+                    monitor soil health, and increase crop productivity.
+                </p>
+            </div>
+
+            <!-- Product -->
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#dashboard">Dashboard</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <!-- <li><a href="comming-soon.html">Careers</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/">Documentation</a></li>
+                    <!-- <li><a href="comming-soon.html">Blog</a></li> -->
+                    <li><a href="contact.html">Support</a></li>
+                </ul>
+            </div>
+            <!-- Social -->
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="contact.html"><i class="fab fa-linkedin"></i></a>
+                    <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                    <a href="contact.html"><i class="fab fa-facebook"></i></a>
+                    <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 AgriSense. All rights reserved.</p>
+        </div>
+
+    </footer>
+    <div class="modal" id="demoModal">
+
+        <div class="modal-content" id="modalBox">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <h2>Request a Demo</h2>
+            <p>See how AgriSense can transform your farm.</p>
+
+            <form id="demoForm">
+
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="text" id="farm" maxlength="10" placeholder="Farm Size" required>
+
+                <p class="error" id="formError"></p>
+
+                <button type="submit">Submit Request</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+        const modal = document.getElementById("demoModal");
+        const form = document.getElementById("demoForm");
+        const error = document.getElementById("formError");
+        const box = document.getElementById("modalBox");
+
+        function openModal() {
+            document.getElementById("demoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("demoModal").style.display = "none";
+        }
+
+        /* close outside */
+        window.onclick = function (e) {
+            const modal = document.getElementById("demoModal");
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        /* FORM VALIDATION */
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            if (name === "" || email === "") {
+                error.innerText = "Please fill all required fields";
+
+                box.classList.add("shake");
+                setTimeout(() => box.classList.remove("shake"), 300);
+            } else {
+                error.classList.add("success");
+                error.innerText = "✅ Request submitted successfully!";
+
+                form.reset();
+            }
+        });
+         document.getElementById("farm").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    </script>
+
+</body>
+
+</html>
